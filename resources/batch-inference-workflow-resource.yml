@@ -40,4 +40,5 @@ resources:
       #    on_failure:
       #      - first@company.com
       #      - second@company.com
-      #added a test comment
+      # added a test comment
+      # added test comment
