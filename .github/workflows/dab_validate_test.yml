@@ -24,4 +24,4 @@ jobs:
       # Step 3: Run the specific file
       - name: Execute Specific File
         run: |
-          python path/to/your_file.py
+          python dab_project_101/unittest/test_run.py
