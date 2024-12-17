@@ -1,0 +1,21 @@
+name: PR Unit Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    name: Validate Databricks Bundles & Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Validate Databricks Asset Bundles
+      - name: Validate Databricks Bundles
+        run: |
+          databricks bundle validate 
