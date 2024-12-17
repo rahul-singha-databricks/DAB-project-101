@@ -1,13 +1,13 @@
-name: DAB validate
+name: Databricks Bundle Validation
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - '**' # Trigger on push to any branch
 
 jobs:
-  run-tests:
-    name: Validate Databricks Bundles & Run Unit Tests
+  validate-databricks-bundles:
+    name: Run Databricks Bundle Validation
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Step 2: Validate Databricks Asset Bundles
-      - name: Validate Databricks Bundles
+      # Step 2: Install Databricks CLI
+      - name: Install Databricks CLI
         run: |
-          databricks bundle validate 
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+          databricks --version
+
+      # Step 3: Validate Databricks Bundles
+      - name: Validate Databricks Asset Bundles
+        run: |
+          databricks bundle validate
