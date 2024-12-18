@@ -28,7 +28,7 @@ jobs:
       - run: databricks bundle deploy
         env:
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-          DATABRICKS_BUNDLE_ENV: dev_rs
+          DATABRICKS_BUNDLE_ENV: dev
 
   pipeline_update:
     name: "Run pipeline update"
@@ -45,4 +45,4 @@ jobs:
       - run: databricks bundle run model_training_job
         env:
           DATABRICKS_TOKEN:  ${{ secrets.DATABRICKS_TOKEN }}
-          DATABRICKS_BUNDLE_ENV: dev_rs
+          DATABRICKS_BUNDLE_ENV: dev
