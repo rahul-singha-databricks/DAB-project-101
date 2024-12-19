@@ -29,14 +29,10 @@ targets:
       # TODO: add dev workspace URL
       host: https://adb-984752964297111.11.azuredatabricks.net/
 
-  staging:
+  staging_rs:
     workspace:
       host: https://adb-984752964297111.11.azuredatabricks.net/
 
-  prod:
-    workspace:
-      host: https://adb-984752964297111.11.azuredatabricks.net/
-
-  test:
+  prod_rs:
     workspace:
       host: https://adb-984752964297111.11.azuredatabricks.net/
