@@ -1,4 +1,4 @@
-name: Deploy to Staging
+name: Deploy to Dev
 
 concurrency: 1
 
@@ -10,7 +10,7 @@ on:
       - opened
       - synchronize
     branches:
-      - main
+      - staging
     paths:
       - "**/*.yml"
       - "**/*.py"
